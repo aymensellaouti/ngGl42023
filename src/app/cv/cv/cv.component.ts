@@ -11,6 +11,8 @@ export class CvComponent {
   cvs: Cv[] = [
     new Cv(1, "sellaouti", "aymen", "as.jpg"),
     new Cv(2, "sellaouti", "skander", "cv.png"),
+    new Cv(2, "Dhaouadi", "yassine", ""),
+    new Cv(2, "Mourali", "sandra", "              "),
   ];
   onForwardCv(cv: Cv) {
     this.selectedCv = cv;

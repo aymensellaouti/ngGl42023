@@ -8,6 +8,12 @@ import { ListComponent } from './cv/list/list.component';
 import { ItemComponent } from './cv/item/item.component';
 import { CardComponent } from './cv/card/card.component';
 import { HighlightDirective } from './directives/highlight.directive';
+import { DefaultImagePipe } from './cv/pipes/default-image.pipe';
+import { TestPureComponent } from './test-pure/test-pure.component';
+import { FormsModule } from '@angular/forms';
+import { CalculFuPipe } from './pipes/calcul-fu.pipe';
+import { createLogger } from './provider factories/instances.factory';
+import { loggerToken } from './injection tokens/logger.token';
 
 @NgModule({
   declarations: [
@@ -16,13 +22,20 @@ import { HighlightDirective } from './directives/highlight.directive';
     ListComponent,
     ItemComponent,
     CardComponent,
-    HighlightDirective
+    HighlightDirective,
+    DefaultImagePipe,
+    TestPureComponent,
+    CalculFuPipe,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  exports: [],
+  providers: [
+    {
+      useFactory: createLogger,
+      provide: loggerToken,
+      deps: []
+    },
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
