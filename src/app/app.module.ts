@@ -14,6 +14,8 @@ import { FormsModule } from '@angular/forms';
 import { CalculFuPipe } from './pipes/calcul-fu.pipe';
 import { createLogger } from './provider factories/instances.factory';
 import { loggerToken } from './injection tokens/logger.token';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,8 @@ import { loggerToken } from './injection tokens/logger.token';
     DefaultImagePipe,
     TestPureComponent,
     CalculFuPipe,
+    NavbarComponent,
+    HomeComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   exports: [],

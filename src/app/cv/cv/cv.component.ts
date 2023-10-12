@@ -5,6 +5,7 @@ import { Cv } from "../model/cv";
   selector: "app-cv",
   templateUrl: "./cv.component.html",
   styleUrls: ["./cv.component.css"],
+  providers: [],
 })
 export class CvComponent {
   selectedCv: Cv | null = null;
