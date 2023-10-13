@@ -1,0 +1,14 @@
+<form #monformulaire="ngForm">
+  name <input [ngModel]="'aymen'"  #nameInput="ngModel" class="form-control" required minlength="4" ngModel name="name" type="text">
+  <div
+    *ngIf="nameInput.invalid && nameInput.dirty"
+    class="alert alert-danger">
+    Le nom doit avoir au moins 4 caractères
+  </div>
+  age <input class="form-control" required ngModel name="age" type="number">
+  <button
+    [disabled]="monformulaire.invalid"
+    class="btn btn-primary" (click)="processForm(monformulaire)">process</button>
+</form>
+
+<!-- Template Driven Form => Formulaire est crée dans le html -->

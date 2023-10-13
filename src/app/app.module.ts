@@ -16,6 +16,13 @@ import { createLogger } from './provider factories/instances.factory';
 import { loggerToken } from './injection tokens/logger.token';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
+import { RouterParamComponent } from './components/router-param/router-param.component';
+import { FrontComponent } from './components/front/front.component';
+import { AdminComponent } from './components/admin/admin.component';
+import { MasterDetailsComponent } from './cv/master-details/master-details.component';
+import { DetailCvComponent } from './cv/detail-cv/detail-cv.component';
+import { NF404Component } from './components/nf404/nf404.component';
+import { TestformComponent } from './components/testform/testform.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +37,13 @@ import { HomeComponent } from './components/home/home.component';
     CalculFuPipe,
     NavbarComponent,
     HomeComponent,
+    RouterParamComponent,
+    FrontComponent,
+    AdminComponent,
+    MasterDetailsComponent,
+    DetailCvComponent,
+    NF404Component,
+    TestformComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   exports: [],
