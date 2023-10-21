@@ -1,0 +1,10 @@
+<p>slider works!</p>
+
+<img
+  [ngStyle]="{
+    width: size + 'px',
+    heigth: size + 'px',
+  }"
+  src="assets/images/{{ slider$ | async }}"
+  class="rounded-circle"
+/>
