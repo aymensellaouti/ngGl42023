@@ -12,7 +12,7 @@ import { CardComponent } from "./cv/card/card.component";
 import { HighlightDirective } from "./directives/highlight.directive";
 import { DefaultImagePipe } from "./cv/pipes/default-image.pipe";
 import { TestPureComponent } from "./test-pure/test-pure.component";
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { CalculFuPipe } from "./pipes/calcul-fu.pipe";
 import { createLogger } from "./provider factories/instances.factory";
 import { loggerToken } from "./injection tokens/logger.token";
@@ -27,7 +27,7 @@ import { NF404Component } from "./components/nf404/nf404.component";
 import { TestformComponent } from "./components/testform/testform.component";
 import { ObservableComponent } from "./rxjs/observable/observable.component";
 import { ToastrModule } from "ngx-toastr";
-import { SliderComponent } from './rxjs/slider/slider.component';
+import { SliderComponent } from "./rxjs/slider/slider.component";
 
 @NgModule({
   declarations: [
@@ -59,6 +59,7 @@ import { SliderComponent } from './rxjs/slider/slider.component';
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot(), // ToastrModule added
     HttpClientModule,
+    ReactiveFormsModule,
   ],
   exports: [],
   providers: [

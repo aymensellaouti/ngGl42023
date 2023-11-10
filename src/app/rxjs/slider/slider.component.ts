@@ -1,5 +1,6 @@
+import { HttpClient } from "@angular/common/http";
 import { Component, Input } from "@angular/core";
-import { Observable, map, timer } from "rxjs";
+import { Observable, combineLatest, map, timer } from "rxjs";
 
 @Component({
   selector: "app-slider",
@@ -19,10 +20,16 @@ export class SliderComponent {
   ];
 
   slider$: Observable<string>;
-  constructor() {
-    this.slider$ = timer(0, this.time)
+  images$: Observable<any>;
+  constructor(private http: HttpClient) {
+    /*  this.slider$ = timer(0, this.time)
       // 0 1 2 3 4 5 6
       .pipe(map((index) => this.images[index % this.images.length]));
     //
+   */
+    this.images$ = this.http.get("https://jsonplaceholder.typicode.com/photos");
+    this.slider$ = combineLatest([timer(0, this.time), this.images$]).pipe(
+      map(([index, images]) => images[index % images.length].url)
+    );
   }
 }

@@ -1,2 +1,6 @@
 <p>observable works! {{ myObservable | async }}</p>
 {{ cvs$ | async | json }}
+
+<form [formGroup]="form">
+  <input formControlName="name" type="text" class="form-control" />
+</form>

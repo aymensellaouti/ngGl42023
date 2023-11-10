@@ -1,8 +1,11 @@
 <div class="row">
-  <div class="col">
-    <app-list (forwardCv)="onForwardCv($event)" [cvs]="cvs"></app-list>
+  <div class="alert alert-warning">
+    Le nombre de cv sélectionné est : {{ nb }}
   </div>
   <div class="col">
-    <app-card [cv]="selectedCv"></app-card>
+    <app-list [cvs]="cvs"></app-list>
+  </div>
+  <div class="col">
+    <app-card></app-card>
   </div>
 </div>

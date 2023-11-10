@@ -1,5 +1,7 @@
 import { Component, Input } from "@angular/core";
 import { Cv } from "../model/cv";
+import { CvService } from "../services/cv.service";
+import { Observable } from "rxjs";
 
 @Component({
   selector: "app-card",
@@ -7,8 +9,8 @@ import { Cv } from "../model/cv";
   styleUrls: ["./card.component.css"],
 })
 export class CardComponent {
-  @Input({
-    required: true,
-  })
-  cv: Cv | null = null;
+  cv$: Observable<Cv>;
+  constructor(private cvService: CvService) {
+    this.cv$ = this.cvService.selectCv$;
+  }
 }

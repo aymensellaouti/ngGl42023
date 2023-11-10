@@ -9,16 +9,10 @@ import { Cv } from "../model/cv";
 export class ListComponent {
   @Input() cvs: Cv[] = [];
   isHidden = true;
-  @Output()
-  forwardCv = new EventEmitter();
+  /*   @Output()
+  forwardCv = new EventEmitter(); */
   constructor() {}
   showHide() {
     this.isHidden = !this.isHidden;
-  }
-
-  onSelectCv(cv: Cv): void {
-    console.log(cv);
-
-    this.forwardCv.emit(cv);
   }
 }

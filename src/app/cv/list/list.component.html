@@ -7,7 +7,7 @@
     *ngFor="let cv of cvs; let isOdd = odd"
     class="list-group-item"
   >
-    <app-item (selectCv)="onSelectCv($event)" [cv]="cv"></app-item>
+    <app-item [cv]="cv"></app-item>
   </li>
 </ol>
 
