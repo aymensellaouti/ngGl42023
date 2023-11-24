@@ -1,7 +1,7 @@
 import { Component } from "@angular/core";
 import { Cv } from "../model/cv";
 import { CvService } from "../services/cv.service";
-import { distinctUntilChanged } from "rxjs";
+import { Observable, distinctUntilChanged, tap } from "rxjs";
 
 @Component({
   selector: "app-cv",
@@ -10,10 +10,12 @@ import { distinctUntilChanged } from "rxjs";
 })
 export class CvComponent {
   nb = 0;
+  cv$: Observable<Cv>;
   constructor(private cvService: CvService) {
-    this.cvService.selectCv$
-      .pipe(distinctUntilChanged())
-      .subscribe(() => this.nb++);
+    this.cv$ = this.cvService.selectCv$.pipe(
+      distinctUntilChanged(),
+      tap(() => this.nb++)
+    );
   }
   cvs: Cv[] = [
     new Cv(1, "sellaouti", "aymen", "as.jpg"),

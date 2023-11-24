@@ -1,12 +1,22 @@
 <app-navbar />
 <hr />
-<!-- <app-slider /> -->
-<!-- <app-slider /> -->
-<router-outlet></router-outlet>
-<hr />
-footer
-<!--
+<div #bigDiv>
+  <button (click)="ar.tick()">Detect Change</button>
+  <!-- <app-slider /> -->
+  <!-- <app-slider /> -->
+  <router-outlet></router-outlet>
+  <input type="text" [(ngModel)]="name" />
+  <input type="text" [(ngModel)]="user.name" />
+  <input type="text" [(ngModel)]="user.age" />
+  <app-test-cd></app-test-cd>
+  <!-- <app-push [name]="name" [user]="user" /> -->
+  <hr />
+  footer
+  <!--
 
-  2 Templates : 1 Front  2 Admin
+    2 Templates : 1 Front  2 Admin
+
+</div>
 
  -->
+</div>

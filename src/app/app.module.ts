@@ -28,6 +28,9 @@ import { TestformComponent } from "./components/testform/testform.component";
 import { ObservableComponent } from "./rxjs/observable/observable.component";
 import { ToastrModule } from "ngx-toastr";
 import { SliderComponent } from "./rxjs/slider/slider.component";
+import { PushComponent } from './components/push/push.component';
+import { TestCDComponent } from './components/test-cd/test-cd.component';
+import { ListElementsComponent } from './components/list-elements/list-elements.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +54,9 @@ import { SliderComponent } from "./rxjs/slider/slider.component";
     TestformComponent,
     ObservableComponent,
     SliderComponent,
+    PushComponent,
+    TestCDComponent,
+    ListElementsComponent,
   ],
   imports: [
     BrowserModule,

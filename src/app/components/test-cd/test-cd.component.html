@@ -1,0 +1,6 @@
+<p>test-cd works!</p>
+
+<input type="text" [(ngModel)]="name" />
+<input type="number" (change)="add(+addInput.value)" #addInput />
+<span>{{ name }}</span>
+<app-list-elements [data]="data"></app-list-elements>

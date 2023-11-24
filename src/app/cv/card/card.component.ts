@@ -9,8 +9,6 @@ import { Observable } from "rxjs";
   styleUrls: ["./card.component.css"],
 })
 export class CardComponent {
-  cv$: Observable<Cv>;
-  constructor(private cvService: CvService) {
-    this.cv$ = this.cvService.selectCv$;
-  }
+  @Input({ required: true }) cv!: Cv;
+  constructor() {}
 }
